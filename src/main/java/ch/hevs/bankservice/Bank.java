@@ -7,6 +7,7 @@ import javax.ejb.Local;
 import ch.hevs.businessobject.Client;
 import ch.hevs.businessobject.Account;
 
+/**** HELNEA **/
 
 @Local
 public interface Bank {
