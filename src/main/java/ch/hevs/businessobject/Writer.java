@@ -9,6 +9,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 
 
@@ -18,22 +23,18 @@ public class Writer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private Long id;
-	@Column(name="firstname")
+	private long id;
+	@Column(name="prenom")
 	private String firstname;
-	@Column(name="lastname")
+	@Column(name="nom")
 	private String lastname;	
 	
-	// relations
-	@ManyToOne
-	@JoinColumn(name = "FK_CLIENT")
-	private Client owner;
-
 	
 	// relation
-	@OneToMany(mappedBy="Book")
-	private Set<Book> books;
+	@OneToMany(mappedBy="book", cascade = CascadeType.ALL)
+	private List<Book> books;
 	
+		
 	
 	// id 
 	public Long getId() {
@@ -59,28 +60,15 @@ public class Writer {
 		this.lastname = lastname;
 	}
 	
-
-/*
 	
-	// owner (from Client)
-	public Client getOwner() {
-		return owner;
+	// books (FROM BOOK)
+	public List<Book> getBooks() {
+		return books;
 	}
-	public void setOwner(Client owner) {
-		this.owner = owner;
-	}
-
-
-	// methods
-	public void debit(int amount) {
-		long newAmount = getSaldo() - amount;
-		setSaldo(newAmount);
+	public void setBooks(List<Book> books) {
+		this.books = books;
 	}
 	
-	public void credit(int amount) {
-		setSaldo(getSaldo() + amount);
-	}
-*/
 	// constructors
 	public Writer() {
 	}
@@ -89,8 +77,9 @@ public class Writer {
 		this.lastname = lastname;
 	}
 	
-	@PostPersist
-	public void acknowledgePersist() {
-		System.out.println("Writer persisted!!!");
+	@Override
+	public String toString() {
+		String result = id + "-" + lastname + "-" + firstname;
+		return result;
 	}
 }
