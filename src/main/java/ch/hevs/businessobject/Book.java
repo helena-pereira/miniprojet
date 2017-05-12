@@ -3,20 +3,28 @@ package ch.hevs.businessobject;
 import javax.persistence.*;
 
 @Entity
+@Table(name="Book")
 public class Book {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long idBook;
+	@Column(name="Title")
 	private String title;
-	private int publicationYear;	
+	@Column(name="Publication Year")
+	private int publicationYear;
+	@Column(name="Description")
 	private String description;
 	
+	//relation FK
 	@ManyToOne
-	@JoinColumn(name = "FK_WRITER")
-	private Writer idWriter;
+	@JoinColumn(name = "Writer")
+	private Writer writer;
 	
-	private Long idCategory;
+	//relation FK
+	@ManyToOne
+	@JoinColumn(name = "Category")
+	private Category category;
 	
 	
 	public Book(){
@@ -24,7 +32,10 @@ public class Book {
 	}
 	
 	public Book(Long idBook, String title, int publicYear, String description){
-		
+		this.idBook = idBook;
+		this.title = title;
+		this.publicationYear = publicYear;
+		this.description = description;
 	}
 	
 	
@@ -60,19 +71,19 @@ public class Book {
 		this.description = description;
 	}
 	
-	public Long getIdWriter() {
-		return idWriter;
+	public Writer getIdWriter() {
+		return writer;
 	}
 	
-	public void setIdWriter(Long idWriter) {
-		this.idWriter = idWriter;
+	public void setIdWriter(Writer writer) {
+		this.writer = writer;
 	}
 	
-	public Long getIdCategory() {
-		return idCategory;
+	public Category getIdCategory() {
+		return category;
 	}
 	
-	public void setIdCategory(Long idCategory) {
-		this.idCategory = idCategory;
+	public void setIdCategory(Category idCategory) {
+		this.category = category;
 	}
 }
