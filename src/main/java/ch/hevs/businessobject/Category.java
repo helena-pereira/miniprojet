@@ -15,7 +15,7 @@ public class Category {
 	private String descCategory;
 	
 
-	// relation
+	// relation + transitive persistence
 	@OneToMany(mappedBy="category", cascade = CascadeType.ALL)
 	private Set<Book> books;
 

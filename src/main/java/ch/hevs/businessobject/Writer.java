@@ -30,7 +30,7 @@ public class Writer {
 	private String lastname;	
 	
 	
-	// relation
+	// relation + transitive persistence
 	@OneToMany(mappedBy="writer", cascade = CascadeType.ALL)
 	private List<Book> books;
 	
