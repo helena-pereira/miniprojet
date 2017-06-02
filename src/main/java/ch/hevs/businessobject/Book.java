@@ -84,6 +84,6 @@ public class Book {
 	}
 	
 	public void setIdCategory(Category idCategory) {
-		this.category = category;
+		this.category = idCategory;
 	}
 }

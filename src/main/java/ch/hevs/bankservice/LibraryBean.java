@@ -9,22 +9,23 @@ import javax.persistence.PersistenceContextType;
 import javax.persistence.Query;
 
 import ch.hevs.businessobject.Account;
+import ch.hevs.businessobject.Book;
 import ch.hevs.businessobject.Client;
 
 @Stateful
-public class BankBean implements Bank {
+public class LibraryBean implements Library {
 	
 	@PersistenceContext(name = "BankPU", type=PersistenceContextType.EXTENDED)
 	private EntityManager em;
 
-	public Account getAccount(String accountDescription, String lastnameOwner) {
-		Query query = em.createQuery("FROM Account a WHERE a.description=:description AND a.owner.lastname=:lastname");
-		query.setParameter("description", accountDescription);
-		query.setParameter("lastname", lastnameOwner);
+	public Writer getWriter(String writerDescription, String titleBook) {
+		Query query = em.createQuery("FROM Writer w WHERE w.description=:description AND w.book.title=:titleBook");
+		query.setParameter("description", writerDescription);
+		query.setParameter("title", titleBook);
 		
-		Account account = (Account) query.getSingleResult();
-		System.out.println("ID account called from getAccount(): "+account.getId());
-		return account;
+		Writer writer= (Writer) query.getSingleResult();
+		System.out.println("ID account called from getBook(): "+writer.getId());
+		return writer;
 	}
 	
 	public List<Account> getAccountListFromClientLastname(String lastname) {
@@ -54,5 +55,11 @@ public class BankBean implements Bank {
 	
 	public Client getClient(long clientid) {
 		return (Client) em.createQuery("FROM Client c where c.id=:id").setParameter("id", clientid).getSingleResult();
+	}
+
+	@Override
+	public Book getBook(String bookDescription) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
