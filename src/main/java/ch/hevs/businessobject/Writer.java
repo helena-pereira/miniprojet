@@ -31,7 +31,7 @@ public class Writer {
 	
 	
 	// relation
-	@OneToMany(mappedBy="book", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="Book", cascade = CascadeType.ALL)
 	private List<Book> books;
 	
 		
