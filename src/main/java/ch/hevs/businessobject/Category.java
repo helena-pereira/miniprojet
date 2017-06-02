@@ -16,7 +16,7 @@ public class Category {
 	
 
 	// relation
-	@OneToMany(mappedBy="Book", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="category", cascade = CascadeType.ALL)
 	private Set<Book> books;
 
 	public Category(){
