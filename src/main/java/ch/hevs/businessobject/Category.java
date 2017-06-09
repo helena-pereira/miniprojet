@@ -4,11 +4,11 @@ import java.util.Set;
 
 import javax.persistence.*;
 
-//@Entity
-//@Table(name="Category")
+@Entity
+@Table(name="Category")
 public class Category {
 	
-	/*
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long idCategory;
@@ -29,5 +29,4 @@ public class Category {
 		this.idCategory = idCategory;
 		this.descCategory = descCategory;
 	}
-	*/
 }

@@ -2,11 +2,11 @@ package ch.hevs.businessobject;
 
 import javax.persistence.*;
 
-//@Entity
-//@Table(name="Book")
+@Entity
+@Table(name="Book")
 public class Book {
 
-	/*
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long idBook;
@@ -87,5 +87,4 @@ public class Book {
 	public void setIdCategory(Category idCategory) {
 		this.category = idCategory;
 	}
-	*/
 }

@@ -17,11 +17,10 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 
 
-//@Entity
-//@Table(name="Writer")
+@Entity
+@Table(name="Writer")
 public class Writer {
 
-	/*
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
@@ -83,5 +82,4 @@ public class Writer {
 		String result = id + "-" + lastname + "-" + firstname;
 		return result;
 	}
-	*/
 }
