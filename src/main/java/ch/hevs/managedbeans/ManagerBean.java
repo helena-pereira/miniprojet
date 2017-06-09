@@ -10,10 +10,8 @@ import javax.naming.NamingException;
 
 import ch.hevs.bankservice.Library;
 import ch.hevs.bankservice.LibraryBean;
-import ch.hevs.businessobject.Account;
 import ch.hevs.businessobject.Book;
 import ch.hevs.businessobject.Category;
-import ch.hevs.businessobject.Client;
 import ch.hevs.businessobject.Writer;
 
 /**

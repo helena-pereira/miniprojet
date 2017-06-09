@@ -17,8 +17,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 
 
-@Entity
-@Table(name="Writer")
+//@Entity
+//@Table(name="Writer")
 public class Writer {
 
 	/*

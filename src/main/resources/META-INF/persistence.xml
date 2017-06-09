@@ -9,8 +9,6 @@
 		<jta-data-source>java:/labsDS</jta-data-source>
 
 		<!-- A EFFACER -->
-		<class>ch.hevs.businessobject.Client</class>
-		<class>ch.hevs.businessobject.Account</class>
 		
 		
 		<class>ch.hevs.businessobject.Book</class>

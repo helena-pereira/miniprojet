@@ -4,8 +4,8 @@ import java.util.Set;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name="Category")
+//@Entity
+//@Table(name="Category")
 public class Category {
 	
 	/*

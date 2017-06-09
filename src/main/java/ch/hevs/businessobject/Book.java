@@ -2,8 +2,8 @@ package ch.hevs.businessobject;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name="Book")
+//@Entity
+//@Table(name="Book")
 public class Book {
 
 	/*

@@ -4,9 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import ch.hevs.businessobject.Client;
 import ch.hevs.businessobject.Writer;
-import ch.hevs.businessobject.Account;
 import ch.hevs.businessobject.Book;
 import ch.hevs.businessobject.Category;
 
