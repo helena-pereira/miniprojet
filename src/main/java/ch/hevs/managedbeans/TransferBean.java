@@ -19,6 +19,7 @@ import ch.hevs.businessobject.Client;
 
 public class TransferBean
 {
+	/*
     private List<Client> clients;
     private List<String> clientNames;
     private List<String> sourceAccountDescriptions;
@@ -161,5 +162,5 @@ public class TransferBean
     	}
 
 		return "showTransferResult"; //  the String value returned represents the outcome used by the navigation handler to determine what page to display next.
-	} 
+	} */
 }
