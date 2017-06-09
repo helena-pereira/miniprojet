@@ -21,6 +21,7 @@ import javax.persistence.Column;
 @Table(name="Writer")
 public class Writer {
 
+	/*
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
@@ -82,4 +83,5 @@ public class Writer {
 		String result = id + "-" + lastname + "-" + firstname;
 		return result;
 	}
+	*/
 }
