@@ -8,6 +8,7 @@ import ch.hevs.businessobject.Client;
 import ch.hevs.businessobject.Writer;
 import ch.hevs.businessobject.Account;
 import ch.hevs.businessobject.Book;
+import ch.hevs.businessobject.Category;
 
 /**** STEPHANIE **/
 
@@ -31,11 +32,44 @@ public interface Bank {
 
 public interface Library {
 	
-	Book getBook(String bookDescription);
-	Writer addWriter();
+	Book getBook(int idBook);
+	
+	//ajouter un écrivain
+	void addWriter(Writer writer);
+	
 	//ajouter un livre et l'associer à une catégorie
 	Book addBook();
 	
+	
+	
+	
 	//supprimer un écrivain ainsi que tous les livres qu'il a écrit	
-	Writer 
+	void deleteWriter();
+	
+	//supprimer un livre
+	void deleteBook();
+	
+	
+	
+	
+	//update un écrivain
+	Writer udateWriter(int writer);
+	
+	//update un livre
+	Book udateBook(int book);
+	
+	
+	
+	//afficher la liste de écrivains
+	List<Writer> getWriters();
+	
+	//aficher la liste des livres
+	List<Book> getBooks();
+	
+	//afficher la liste des catégories
+	List<Category> getCategories();
+	
+	
+	
+	
 }
