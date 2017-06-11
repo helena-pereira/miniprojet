@@ -12,7 +12,7 @@ public class Book {
 	private Long idBook;
 	@Column(name="Title")
 	private String title;
-	@Column(name="Publication Year")
+	@Column(name="PublicationYear")
 	private int publicationYear;
 	@Column(name="Description")
 	private String description;

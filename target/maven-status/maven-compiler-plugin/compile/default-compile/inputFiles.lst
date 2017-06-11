@@ -1,6 +1,7 @@
-G:\HES-SO\606_3\635-1_Java\rootJavaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution\src\main\java\ch\hevs\managedbeans\TransferBean.java
-G:\HES-SO\606_3\635-1_Java\rootJavaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution\src\main\java\ch\hevs\bankservice\Bank.java
-G:\HES-SO\606_3\635-1_Java\rootJavaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution\src\main\java\ch\hevs\businessobject\Account.java
-G:\HES-SO\606_3\635-1_Java\rootJavaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution\src\main\java\ch\hevs\businessobject\Client.java
-G:\HES-SO\606_3\635-1_Java\rootJavaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution\src\main\java\ch\hevs\exception\BankException.java
-G:\HES-SO\606_3\635-1_Java\rootJavaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution\src\main\java\ch\hevs\bankservice\BankBean.java
+G:\HES-SO\606_3\635-1_Java\rootJavaEE\Labs\MINIPROJET\src\main\java\ch\hevs\managedbeans\ManagerBean.java
+G:\HES-SO\606_3\635-1_Java\rootJavaEE\Labs\MINIPROJET\src\main\java\ch\hevs\bankservice\LibraryBean.java
+G:\HES-SO\606_3\635-1_Java\rootJavaEE\Labs\MINIPROJET\src\main\java\ch\hevs\businessobject\Category.java
+G:\HES-SO\606_3\635-1_Java\rootJavaEE\Labs\MINIPROJET\src\main\java\ch\hevs\businessobject\Writer.java
+G:\HES-SO\606_3\635-1_Java\rootJavaEE\Labs\MINIPROJET\src\main\java\ch\hevs\businessobject\Book.java
+G:\HES-SO\606_3\635-1_Java\rootJavaEE\Labs\MINIPROJET\src\main\java\ch\hevs\exception\BookException.java
+G:\HES-SO\606_3\635-1_Java\rootJavaEE\Labs\MINIPROJET\src\main\java\ch\hevs\bankservice\Library.java
