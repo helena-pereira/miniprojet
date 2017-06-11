@@ -24,7 +24,7 @@ public class Category {
 		
 	}
 	
-	
+	 
 	public Category(Long idCategory, String descCategory){
 		this.idCategory = idCategory;
 		this.descCategory = descCategory;

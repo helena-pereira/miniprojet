@@ -33,9 +33,9 @@ public class ManagerBean
     	
     	// use JNDI to inject reference to book EJB
     	InitialContext ctx = new InitialContext();
-    	libraryBean = (LibraryBean) ctx.lookup("java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/LibraryBean!ch.hevs.bankservice.LibraryBean");
-    	library = (Library) ctx.lookup("java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/LibraryBean!ch.hevs.bankservice.Library");
-
+    	libraryBean = (LibraryBean) ctx.lookup("java:global/MiniProject-0.0.1-SNAPSHOT/LibraryBean!ch.hevs.bankservice.LibraryBean");
+    	library = (Library) ctx.lookup("java:global/MiniProject-0.0.1-SNAPSHOT/LibraryBean!ch.hevs.bankservice.Library");
+ 
     	
     }
 }

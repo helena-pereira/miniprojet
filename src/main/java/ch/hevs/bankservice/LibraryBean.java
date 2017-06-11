@@ -14,7 +14,7 @@ import javax.transaction.UserTransaction;
 import ch.hevs.businessobject.Book;
 import ch.hevs.businessobject.Category;
 import ch.hevs.businessobject.Writer;
-
+ 
 @Stateful
 public class LibraryBean implements Library {
 	

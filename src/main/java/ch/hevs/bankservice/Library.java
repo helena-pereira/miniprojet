@@ -9,7 +9,7 @@ import ch.hevs.businessobject.Book;
 import ch.hevs.businessobject.Category;
 
 /**** STEPHANIE **/
-
+ 
 @Local
 
 /*

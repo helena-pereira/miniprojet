@@ -83,7 +83,7 @@ public class Book {
 	public Category getIdCategory() {
 		return category;
 	} 
-	
+	 
 	public void setIdCategory(Category idCategory) {
 		this.category = idCategory;
 	}
