@@ -38,4 +38,8 @@ public class ManagerBean
  
     	
     }
+    
+    public List<Book> getAllBooks(){
+    	return books;
+    }
 }
