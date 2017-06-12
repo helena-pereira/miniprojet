@@ -42,4 +42,12 @@ public class ManagerBean
     public List<Book> getAllBooks(){
     	return books;
     }
+    
+    public List<Writer> getAllWriters(){
+    	return writers;
+    }
+    
+    public List<Category> getAllCategories(){
+    	return categories;
+    }
 }
