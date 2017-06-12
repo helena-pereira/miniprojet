@@ -8,6 +8,11 @@
 		<managed-bean-name>transferBean</managed-bean-name>
 		<managed-bean-class>ch.hevs.managedbeans.TransferBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>managerBean</managed-bean-name>
+		<managed-bean-class>ch.hevs.managedbeans.ManagerBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean> 
 	<navigation-rule>
 		<display-name>welcomeBank.xhtml</display-name>
@@ -23,6 +28,22 @@
 		<navigation-case>
 			<from-outcome>#{transferBean.performTransfer}</from-outcome>
 			<to-view-id>/showTransferResult.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>welcome.xhtml</display-name>
+		<from-view-id>/welcome.xhtml</from-view-id>
+		<navigation-case>
+		<from-outcome>addCategory</from-outcome>
+			<to-view-id>/addCategory.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>addCategory.xhtml</display-name>
+		<from-view-id>/addCategory.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>#{managerBean.addCategory}</from-outcome>
+			<to-view-id>/showCategory.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 

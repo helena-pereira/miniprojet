@@ -9,6 +9,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 import javax.persistence.Query;
+import javax.transaction.HeuristicMixedException;
+import javax.transaction.HeuristicRollbackException;
+import javax.transaction.NotSupportedException;
+import javax.transaction.RollbackException;
+import javax.transaction.SystemException;
 import javax.transaction.UserTransaction;
 
 import ch.hevs.businessobject.Book;
@@ -45,6 +50,7 @@ public class LibraryBean implements Library {
 	public void addWriter(Writer writer) {
 		try
 		{
+			transaction = ctx.getUserTransaction();
 			transaction.begin();
 			em.persist(em.contains(writer) ? writer : em.merge(writer));
 			transaction.commit();
@@ -111,6 +117,20 @@ public class LibraryBean implements Library {
 		}
 		public void setCtx(SessionContext ctx) {
 			this.ctx = ctx;
+		}
+
+
+
+
+
+		@Override
+		public void addCategory(Category category) throws NotSupportedException, SystemException, SecurityException, IllegalStateException, RollbackException, HeuristicMixedException, HeuristicRollbackException {
+				//transaction = ctx.getUserTransaction();
+				//transaction.begin();
+				em.persist(em.contains(category) ? category : em.merge(category));
+				//transaction.commit();
+
+			
 		}
 		
 		

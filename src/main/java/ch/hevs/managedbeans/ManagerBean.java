@@ -24,8 +24,11 @@ public class ManagerBean
 	private List<Book> books;
 	private List<Writer> writers;
 	private List<Category> categories;
-	private LibraryBean libraryBean;
 	private Library library;
+	private String descriptionCategory;
+    private String transactionResult;
+
+	
 	
     
     @PostConstruct
@@ -33,10 +36,7 @@ public class ManagerBean
     	
     	// use JNDI to inject reference to book EJB
     	InitialContext ctx = new InitialContext();
-    	libraryBean = (LibraryBean) ctx.lookup("java:global/MiniProject-0.0.1-SNAPSHOT/LibraryBean!ch.hevs.bankservice.LibraryBean");
-    	library = (Library) ctx.lookup("java:global/MiniProject-0.0.1-SNAPSHOT/LibraryBean!ch.hevs.bankservice.Library");
- 
-    	
+    	library = (Library) ctx.lookup("java:global/MiniProject-0.0.1-SNAPSHOT/LibraryBean!ch.hevs.bankservice.Library"); 
     }
     
     public List<Book> getAllBooks(){
@@ -50,4 +50,37 @@ public class ManagerBean
     public List<Category> getAllCategories(){
     	return categories;
     }
+    
+    public String addCategory(){
+    	Category c = new Category();
+    	c.setDescCategory(descriptionCategory);
+    	try{
+    		library.addCategory(c);
+			this.transactionResult="Success!";
+
+    	}catch (Exception e) {
+    		e.printStackTrace();
+    	}
+    	
+
+    	return "showCategory";
+    }
+    
+    
+ // destinationClientName
+    public String getDescriptionCategory () {
+    	return descriptionCategory;
+    }
+    public void setDescriptionCategory (final String descriptionCategory) {
+    	this.descriptionCategory=descriptionCategory;
+    }
+    
+    
+ // transactionResult
+    public String getTransactionResult () {
+    	return transactionResult;
+    }
+	public void setTransactionResult(String transactionResult) {
+		this.transactionResult = transactionResult;
+	}
 }

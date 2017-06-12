@@ -3,6 +3,11 @@
   <nodes xsi:type="pageflow:PFPage" name="welcomeBank.xhtml" x="122" y="178" id="pf14971920164830" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14971920164831" path="/welcomeBank.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="transferForm.xhtml" x="338" y="178" id="pf14971920164832" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14971920164833" inlinks="pf14971920164831" path="/transferForm.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="showTransferResult.xhtml" x="554" y="178" id="pf14971920164834" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14971920164833" path="/showTransferResult.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="welcome.xhtml" x="135" y="288" id="pf14972829895170" outlinks="pf14972829895171" path="/welcome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="addCategory.xhtml" x="336" y="288" id="pf14972829895172" outlinks="pf14972831758753" inlinks="pf14972829895171" path="/addCategory.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="showCategory.xhtml" x="526" y="326" id="pf14972831758754" inlinks="pf14972831758753" path="/showCategory.xhtml"/>
   <links id="pf14971920164831" target="pf14971920164832" source="pf14971920164830" outcome="transferForm"/>
   <links id="pf14971920164833" target="pf14971920164834" source="pf14971920164832" outcome="#{transferBean.performTransfer}"/>
+  <links id="pf14972829895171" target="pf14972829895172" source="pf14972829895170" outcome="addCategory"/>
+  <links id="pf14972831758753" target="pf14972831758754" source="pf14972829895172" outcome="#{managerBean.addCategory}"/>
 </pageflow:Pageflow>

@@ -3,6 +3,11 @@ package ch.hevs.bankservice;
 import java.util.List;
 
 import javax.ejb.Local;
+import javax.transaction.HeuristicMixedException;
+import javax.transaction.HeuristicRollbackException;
+import javax.transaction.NotSupportedException;
+import javax.transaction.RollbackException;
+import javax.transaction.SystemException;
 
 import ch.hevs.businessobject.Writer;
 import ch.hevs.businessobject.Book;
@@ -31,6 +36,8 @@ public interface Bank {
 public interface Library {
 	
 	Book getBook(int idBook);
+	
+	void addCategory(Category category) throws NotSupportedException, SystemException, SecurityException, IllegalStateException, RollbackException, HeuristicMixedException, HeuristicRollbackException;
 	
 	//ajouter un écrivain
 	void addWriter(Writer writer);
