@@ -37,10 +37,12 @@ public interface Library {
 	
 	Book getBook(int idBook);
 	
+	
+	//ajouter une catégorie
 	void addCategory(Category category) throws NotSupportedException, SystemException, SecurityException, IllegalStateException, RollbackException, HeuristicMixedException, HeuristicRollbackException;
 	
 	//ajouter un écrivain
-	void addWriter(Writer writer);
+	void addWriter(Writer writer) throws NotSupportedException, SystemException, SecurityException, IllegalStateException, RollbackException, HeuristicMixedException, HeuristicRollbackException;
 	
 	//ajouter un livre et l'associer à une catégorie
 	Book addBook();
@@ -54,14 +56,19 @@ public interface Library {
 	//supprimer un livre
 	void deleteBook();
 	
+	//supprimer une catégorie
+	void deleteCategory();
 	
 	
 	
 	//update un écrivain
-	Writer udateWriter(int writer);
+	Writer updateWriter(int writer);
 	
 	//update un livre
-	Book udateBook(int book);
+	Book updateBook(int book);
+	
+	//update une catégorie
+	Category updateCategory(int category);
 	
 	
 	

@@ -48,7 +48,7 @@ public class Writer {
 	public String getFirstname() {
 		return firstname;
 	}
-	public void setNumber(String firstname) {
+	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
 	

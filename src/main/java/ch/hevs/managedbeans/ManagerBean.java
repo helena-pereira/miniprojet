@@ -26,6 +26,8 @@ public class ManagerBean
 	private List<Category> categories;
 	private Library library;
 	private String descriptionCategory;
+	private String firstname;
+	private String lastname;
     private String transactionResult;
 
 	
@@ -64,6 +66,22 @@ public class ManagerBean
     	
 
     	return "showCategory";
+    }
+    
+    public String addWriter(){
+    	Writer w = new Writer();
+    	w.setLastname(firstname);
+    	w.setFirstname(firstname);
+    	try{
+    		library.addWriter(w);
+			this.transactionResult="Success!";
+
+    	}catch (Exception e) {
+    		e.printStackTrace();
+    	}
+    	
+
+    	return "showWriter";
     }
     
     

@@ -43,22 +43,24 @@ public class LibraryBean implements Library {
 	}
 	
 	
-	
-	
+
+	@Override
+	public void addCategory(Category category) throws NotSupportedException, SystemException, SecurityException, IllegalStateException, RollbackException, HeuristicMixedException, HeuristicRollbackException {
+			//transaction = ctx.getUserTransaction();
+			//transaction.begin();
+			em.persist(em.contains(category) ? category : em.merge(category));
+			//transaction.commit();	
+	}
 	
 	@Override
 	public void addWriter(Writer writer) {
-		try
-		{
-			transaction = ctx.getUserTransaction();
-			transaction.begin();
+			//transaction = ctx.getUserTransaction();
+			//transaction.begin();
 			em.persist(em.contains(writer) ? writer : em.merge(writer));
-			transaction.commit();
-		}
-		catch (Exception ex)
-		{	
-		}
+			//transaction.commit();
 	}
+	
+	
 	@Override
 	public Book addBook() {
 		// TODO Auto-generated method stub
@@ -75,17 +77,21 @@ public class LibraryBean implements Library {
 		
 	}
 	@Override
-	public Writer udateWriter(int writer) {
+	public Writer updateWriter(int writer) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	@Override
-	public Book udateBook(int book) {
+	public Book updateBook(int book) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
-	
+	@Override
+	public Category updateCategory(int category) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	
@@ -119,19 +125,17 @@ public class LibraryBean implements Library {
 			this.ctx = ctx;
 		}
 
-
-
-
-
 		@Override
-		public void addCategory(Category category) throws NotSupportedException, SystemException, SecurityException, IllegalStateException, RollbackException, HeuristicMixedException, HeuristicRollbackException {
-				//transaction = ctx.getUserTransaction();
-				//transaction.begin();
-				em.persist(em.contains(category) ? category : em.merge(category));
-				//transaction.commit();
-
+		public void deleteCategory() {
+			// TODO Auto-generated method stub
 			
 		}
+
+
+
+
+
+
 		
 		
 		
