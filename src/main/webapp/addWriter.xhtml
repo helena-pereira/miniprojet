@@ -20,19 +20,9 @@
          	
          	
          	</h:panelGrid>
+         	<h:commandButton value="addWriter" action="#{managerBean.addWriter}"></h:commandButton>
+         </h:form>
          	
-         	
-         	
-        	<h:outputLabel value="Transfer Information:"></h:outputLabel>
-        	<br></br>
-        	<h:panelGrid columns="1">
-        		<h:outputText value="Firstname"></h:outputText>
-        		<h:inputText value="#{managerBean.firstname}"></h:inputText>
-        		<h:outputText value="Lastname"></h:outputText>
-        		<h:inputText value="#{managerBean.lastname}"></h:inputText>
-         	</h:panelGrid>
-     		<h:commandButton value="addWriter" action="#{managerBean.addWriter}"></h:commandButton>
-        </h:form>
     </ui:define>
 </ui:composition>
 </html>

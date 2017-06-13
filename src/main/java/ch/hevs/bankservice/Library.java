@@ -1,6 +1,7 @@
 package ch.hevs.bankservice;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.ejb.Local;
 import javax.transaction.HeuristicMixedException;
@@ -45,7 +46,7 @@ public interface Library {
 	void addWriter(Writer writer) throws NotSupportedException, SystemException, SecurityException, IllegalStateException, RollbackException, HeuristicMixedException, HeuristicRollbackException;
 	
 	//ajouter un livre et l'associer à une catégorie
-	Book addBook();
+	void addBook(Book book) throws NotSupportedException, SystemException, SecurityException, IllegalStateException, RollbackException, HeuristicMixedException, HeuristicRollbackException;
 	
 	
 	
@@ -69,8 +70,8 @@ public interface Library {
 	
 	//update une catégorie
 	Category updateCategory(int category);
-	
-	
+	Category getCategory(String description);
+	Writer getWriterFirstName(String firstname);
 	
 	//afficher la liste de écrivains
 	List<Writer> getWriters();
@@ -80,7 +81,8 @@ public interface Library {
 	
 	//afficher la liste des catégories
 	List<Category> getCategories();
-	
+	Set<Category> getListCategories();
+	Set<Writer> getListWriters();
 	
 	
 	

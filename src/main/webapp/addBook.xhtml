@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"> 
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="content">
+    	<h:form>
+        	<h:outputLabel value="Add new Book"></h:outputLabel>
+        	<br></br>
+        	<h:panelGrid columns="2">
+        		<h:outputText value="Title"></h:outputText>
+        		<h:inputText value="#{managerBean.bookTitle}"></h:inputText>
+        		
+        		<h:outputText value="Publication year"></h:outputText>
+        		<h:inputText value="#{managerBean.bookPublicationYear}"></h:inputText>
+        		
+        		<h:outputText value="Description"></h:outputText>
+        		<h:inputText value="#{managerBean.bookDescription}"></h:inputText>
+        		
+        		
+        		<h:outputText value="Category"></h:outputText>
+	        	<h:selectOneMenu value="#{managerBean.descriptionCategory}" onchange="submit">
+	        		<f:selectItems value="#{managerBean.listCategories}"/>
+	        	</h:selectOneMenu>
+        		
+        		<h:outputText value="Writer"></h:outputText>
+	        	<h:selectOneMenu value="#{managerBean.writerName}" onchange="submit">
+	        		<f:selectItems value="#{managerBean.listWriters}"/>
+	        	</h:selectOneMenu>
+        		
+        		
+         	</h:panelGrid>
+         	
+         	
+         	
+     		<h:commandButton value="addBook" action="#{managerBean.addBook}"></h:commandButton>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

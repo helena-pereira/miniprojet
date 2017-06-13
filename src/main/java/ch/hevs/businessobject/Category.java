@@ -23,12 +23,12 @@ public class Category {
 
 
 	public String getDescCategory() {
-		return descCategory;
+		return description;
 	}
 
 
 	public void setDescCategory(String descCategory) {
-		this.descCategory = descCategory;
+		this.description = descCategory;
 	}
 
 
@@ -43,7 +43,7 @@ public class Category {
 
 
 	@Column(name="Category")
-	private String descCategory;
+	private String description;
 	
 
 	// relation + transitive persistence
@@ -57,6 +57,14 @@ public class Category {
 	 
 	public Category(Long idCategory, String descCategory){
 		this.idCategory = idCategory;
-		this.descCategory = descCategory;
+		this.description = descCategory;
+		
 	}
+	
+	public String toString()
+	{
+		return description;
+	}
+	
+	
 }

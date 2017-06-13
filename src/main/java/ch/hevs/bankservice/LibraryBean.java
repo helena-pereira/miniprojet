@@ -1,6 +1,8 @@
 package ch.hevs.bankservice;
 
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.Resource;
 import javax.ejb.SessionContext;
@@ -63,9 +65,11 @@ public class LibraryBean implements Library {
 	
 	
 	@Override
-	public Book addBook() {
-		// TODO Auto-generated method stub
-		return null;
+	public void addBook(Book book) {
+		//transaction = ctx.getUserTransaction();
+		//transaction.begin();
+		em.persist(em.contains(book) ? book: em.merge(book));
+		//transaction.commit();
 	}
 	@Override
 	public void deleteWriter() {
@@ -134,6 +138,42 @@ public class LibraryBean implements Library {
 
 
 
+		// gest the full list of categories
+		public Set<Category>getListCategories()
+		{
+			return new LinkedHashSet<Category> (em.createQuery("FROM Category").getResultList());
+		}
+		
+		
+
+
+
+		@Override
+		public Category getCategory(String description) {
+			
+			Query query = em.createQuery("FROM Category a WHERE a.description=:description");
+			query.setParameter("description", description);
+			
+			return (Category) query.getSingleResult();
+		}
+
+
+
+		@Override
+		public Set<Writer> getListWriters() {
+				return new LinkedHashSet<Writer> (em.createQuery("FROM Writer").getResultList());
+			
+		}
+
+
+
+		@Override
+		public Writer getWriterFirstName(String firstname) {
+			Query query = em.createQuery("FROM Writer a WHERE a.firstname=:firstname");
+			query.setParameter("firstname", firstname);
+			
+			return (Writer) query.getSingleResult();
+		}
 
 
 
@@ -142,47 +182,6 @@ public class LibraryBean implements Library {
 		
 	
 	
-	/*
-	
-	public Writer getWriter(String writerDescription, String titleBook) {
-		Query query = em.createQuery("FROM Writer w WHERE w.description=:description AND w.book.title=:titleBook");
-		query.setParameter("description", writerDescription);
-		query.setParameter("title", titleBook);
-		
-		Writer writer= (Writer) query.getSingleResult();
-		System.out.println("ID account called from getBook(): "+writer.getId());
-		return writer;
-	}
-	
-	public List<Account> getAccountListFromClientLastname(String lastname) {
-		return (List<Account>) em.createQuery("SELECT c.accounts FROM Client c where c.lastname=:lastname").setParameter("lastname", lastname).getResultList();
-	}
 
-	public void transfer(Account srcAccount, Account destAccount, int amount) {
-		
-		System.out.println("ID source account called from transfer(): " + srcAccount.getId());
-		System.out.println("ID destination account called from transfer(): " + destAccount.getId());
-		
-	/*	Account srcRealAccount = em.merge(srcAccount);
-		Account destRealAccount = em.merge(destAccount);
-		srcRealAccount.debit(amount);
-		destRealAccount.credit(amount); */
-		
-		// for use with EPC and stateful
-		
-	/*
-		em.persist(srcAccount);
-		em.persist(destAccount);
-		srcAccount.debit(amount);
-		destAccount.credit(amount); 
-	}
-
-	public List<Client> getClients() {
-		return em.createQuery("FROM Client").getResultList();
-	}
-	
-	public Client getClient(long clientid) {
-		return (Client) em.createQuery("FROM Client c where c.id=:id").setParameter("id", clientid).getSingleResult();
-	}*/
 
 }

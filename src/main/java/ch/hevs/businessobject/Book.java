@@ -22,12 +22,28 @@ public class Book {
 	@JoinColumn(name = "Writer")
 	private Writer writer;
 	
+	public Writer getWriter() {
+		return writer;
+	}
+
+	public void setWriter(Writer writer) {
+		this.writer = writer;
+	}
+
 	//relation FK
 	@ManyToOne
 	@JoinColumn(name = "Category")
 	private Category category;
 	
 	
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
 	public Book(){
 		
 	}
@@ -87,4 +103,8 @@ public class Book {
 	public void setIdCategory(Category idCategory) {
 		this.category = idCategory;
 	}
+	
+	
+	
+	
 }
