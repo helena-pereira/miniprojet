@@ -46,5 +46,21 @@
 			<to-view-id>/showCategory.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	<navigation-rule>
+		<display-name>welcome.xhtml</display-name>
+		<from-view-id>/welcome.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>addWriter</from-outcome>
+			<to-view-id>/addWriter.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>addWriter.xhtml</display-name>
+		<from-view-id>/addWriter.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>#{managerBean.addWriter}</from-outcome>
+			<to-view-id>/showWriter.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 
 </faces-config>

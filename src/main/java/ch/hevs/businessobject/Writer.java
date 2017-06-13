@@ -44,9 +44,17 @@ public class Writer {
 		this.id = id;
 	}
 	
+
+	
+	
 	// firstname
 	public String getFirstname() {
 		return firstname;
+		
+	}
+	
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 	public void setNumber(String firstname) {
 		this.firstname = firstname;

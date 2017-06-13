@@ -28,7 +28,9 @@ public class ManagerBean
 	private String descriptionCategory;
     private String transactionResult;
 
-	
+	private String writerFirstName;
+	private String writerLastName;
+
 	
     
     @PostConstruct
@@ -83,4 +85,45 @@ public class ManagerBean
 	public void setTransactionResult(String transactionResult) {
 		this.transactionResult = transactionResult;
 	}
+	
+	
+	
+	
+	//about Writer
+	public String addWriter(){
+    	Writer w = new Writer();
+    	w.setFirstname(writerFirstName);
+    	w.setLastname(writerLastName);
+    	try{
+    		library.addWriter(w);
+			this.transactionResult="Success!";
+
+    	}catch (Exception e) {
+    		e.printStackTrace();
+    	}
+    	
+
+    	return "showWriter";
+    }
+
+	public String getWriterFirstName() {
+		return writerFirstName;
+	}
+
+	public void setWriterFirstName(String writerFirstName) {
+		this.writerFirstName = writerFirstName;
+	}
+
+	public String getWriterLastName() {
+		return writerLastName;
+	}
+
+	public void setWriterLastName(String writerLastName) {
+		this.writerLastName = writerLastName;
+	}
+    
+	
+	
+	
+	
 }

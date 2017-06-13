@@ -50,10 +50,10 @@ public class LibraryBean implements Library {
 	public void addWriter(Writer writer) {
 		try
 		{
-			transaction = ctx.getUserTransaction();
-			transaction.begin();
+			//transaction = ctx.getUserTransaction();
+			//transaction.begin();
 			em.persist(em.contains(writer) ? writer : em.merge(writer));
-			transaction.commit();
+			//transaction.commit();
 		}
 		catch (Exception ex)
 		{	
