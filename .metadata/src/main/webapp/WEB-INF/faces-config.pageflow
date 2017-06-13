@@ -3,19 +3,19 @@
   <nodes xsi:type="pageflow:PFPage" name="welcomeBank.xhtml" x="122" y="178" id="pf14971920164830" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14971920164831" path="/welcomeBank.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="transferForm.xhtml" x="338" y="178" id="pf14971920164832" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14971920164833" inlinks="pf14971920164831" path="/transferForm.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="showTransferResult.xhtml" x="554" y="178" id="pf14971920164834" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14971920164833" path="/showTransferResult.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="welcome.xhtml" x="132" y="348" id="pf14972829895170" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14972829895171 pf14973585354350 pf14973603279444" path="/welcome.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="addCategory.xhtml" x="333" y="348" id="pf14972829895172" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14972831758753" inlinks="pf14972829895171" path="/addCategory.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="showCategory.xhtml" x="561" y="348" id="pf14972831758754" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14972831758753" path="/showCategory.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="addWriter.xhtml" x="341" y="504" id="pf14973585354351" outlinks="pf14973586746592" inlinks="pf14973585354350" path="/addWriter.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="showWriter.xhtml" x="569" y="504" id="pf14973586746593" inlinks="pf14973586746592" path="/showWriter.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="addBook.xhtml" x="240" y="660" id="pf14973603279445" outlinks="pf14973604047916" inlinks="pf14973603279444" path="/addBook.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="showBook.xhtml" x="598" y="673" id="pf14973604047917" inlinks="pf14973604047916" path="/showBook.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="welcome.xhtml" x="122" y="754" id="pf14972829895170" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf14972829895171 pf14973585354350 pf14973710815158" path="/welcome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="addCategory.xhtml" x="338" y="562" id="pf14972829895172" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14972831758753" inlinks="pf14972829895171" path="/addCategory.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="showCategory.xhtml" x="554" y="562" id="pf14972831758754" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14972831758753" path="/showCategory.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="addWriter.xhtml" x="338" y="946" id="pf14973585354351" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf14973586746592" inlinks="pf14973585354350" path="/addWriter.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="showWriter.xhtml" x="554" y="946" id="pf14973586746593" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" inlinks="pf14973586746592" path="/showWriter.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="addBook.xhtml" x="72" y="927" id="pf14973603279445" outlinks="pf14973710815159" inlinks="pf14973710815158" path="/addBook.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="showBook.xhtml" x="264" y="1080" id="pf14973604047917" inlinks="pf14973710815159" path="/showBook.xhtml"/>
   <links id="pf14971920164831" target="pf14971920164832" source="pf14971920164830" outcome="transferForm"/>
   <links id="pf14971920164833" target="pf14971920164834" source="pf14971920164832" outcome="#{transferBean.performTransfer}"/>
   <links id="pf14972829895171" target="pf14972829895172" source="pf14972829895170" outcome="addCategory"/>
   <links id="pf14972831758753" target="pf14972831758754" source="pf14972829895172" outcome="#{managerBean.addCategory}"/>
   <links id="pf14973585354350" target="pf14973585354351" source="pf14972829895170" outcome="addWriter"/>
   <links id="pf14973586746592" target="pf14973586746593" source="pf14973585354351" outcome="#{managerBean.addWriter}"/>
-  <links id="pf14973603279444" target="pf14973603279445" source="pf14972829895170" outcome="addBook"/>
-  <links id="pf14973604047916" target="pf14973604047917" source="pf14973603279445" outcome="#{managerBean.addBook}"/>
+  <links id="pf14973710815158" target="pf14973603279445" source="pf14972829895170" outcome="addBook"/>
+  <links id="pf14973710815159" target="pf14973604047917" source="pf14973603279445" outcome="#{managerBean.addBook}"/>
 </pageflow:Pageflow>

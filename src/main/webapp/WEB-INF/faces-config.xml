@@ -62,5 +62,21 @@
 			<to-view-id>/showWriter.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	<navigation-rule>
+		<display-name>welcome.xhtml</display-name>
+		<from-view-id>/welcome.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>addBook</from-outcome>
+			<to-view-id>/addBook.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>addBook.xhtml</display-name>
+		<from-view-id>/addBook.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>#{managerBean.addBook}</from-outcome>
+			<to-view-id>/showBook.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 
 </faces-config>
