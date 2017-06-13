@@ -26,6 +26,8 @@ public class ManagerBean
 	private List<Category> categories;
 	private Library library;
 	private String descriptionCategory;
+	private String firstname;
+	private String lastname;
     private String transactionResult;
 
 	private String writerFirstName;
@@ -67,6 +69,8 @@ public class ManagerBean
 
     	return "showCategory";
     }
+    
+   
     
     
  // destinationClientName

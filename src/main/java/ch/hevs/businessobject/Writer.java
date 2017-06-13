@@ -21,6 +21,10 @@ import javax.persistence.Column;
 @Table(name="Writer")
 public class Writer {
 
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
@@ -53,12 +57,7 @@ public class Writer {
 		
 	}
 	
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-	public void setNumber(String firstname) {
-		this.firstname = firstname;
-	}
+
 	
 	// lastname	
 	public String getLastname() {
